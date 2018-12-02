@@ -1,0 +1,120 @@
+<html>
+<head>
+        <link rel="shortcut icon" type="image/png" href="alilogo2-01.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <link rel='stylesheet' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+
+        <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans|Poiret+One|Oswald:300" rel="stylesheet" type="text/css">
+<link href="style.css" media="screen" rel="stylesheet" type="text/css">
+    <title>Economie Online</title>
+</head>
+<body>
+  
+<div class="container">
+        <h1 class="titlu">Economie Online</h1>
+        <p class="subtitlu">Pagina Web cu teorie si exercitii pentru economie</p>
+
+<div class="navbar">
+    <a href="homepage.html">Home</a>
+    <a href="expb.html">Quiz Wall</a>
+    <a href="testgrafice.html">Test grafice</a>
+    <a href="test2.html">Test fill in the blank</a>
+    <a href="test3.html">Test de asociere termeni</a>
+    <a href="grila.html">Test grila producatorul si costul</a>
+  </div>
+      
+ <div class="pageTitle">
+              <div class="inside">
+              <h1 class="wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+                <img src="http://www.economicsonline.co.uk/Pictures2017/IconbarSep.png" alt="Icon" style="opacity:1;">
+              </h1>
+           </div>
+      </div>
+<center>
+      <div class="quiz-wrapper">
+            <p class="question-description">Completeaza afirmatiile de mai jos, tragand raspunsul lipsa.</p>
+            <ul class="options">
+                <li class="title">Optiuni</li>
+                <li class="option" data-target="deficit">deficitului</li>
+                <li class="option" data-target="brut">salariul brut</li>
+                <li class="option" data-target="amortizare">amortizare</li>
+                <li class="option" data-target="piata">piata monetara</li>
+                <li class="option" data-target="ceva">uzura</li>
+                <li class="option" data-target="consum">consum tehnologic</li>
+            </ul>
+        <div class="answers">
+            <ol>
+                <li><span class="target" data-accept="brut">&nbsp;</span>este suma totala care i se cuvine posesorului locului de munca.</li>
+                <li> Compensarea <span class="target" data-accept="deficit">&nbsp;</span>  cu excendentul de bani este asigurata de <span class="target" data-accept="piata">&nbsp;</span>.</li>
+                <li>Consumul de capital are in expresia fizica necesar producerii unui anumit bun poarta numele de <span class="target" data-accept="consum">&nbsp;</span> sau specific.</li>
+                <li>In forma valorica, uzura capitalului fix poarta numele de <span class="target" data-accept="amortizare">&nbsp;</span>.</li>
+            </ol>
+        </div>
+         <button type="submit" value="submit">Trimite</button>
+         <div class="lightbox-bg"></div>
+         <div class="status confirm">
+           <p>Toate intrebarile au fost raspunse corect!</p>
+         </div>
+         <div class="status deny">
+           <p>Au ramas intrebari nerezolvate!</p>
+         </div>
+        </div>
+
+</div>
+</center>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js'></script>
+<script>
+$(document).ready( function() {
+        var answersLeft = [];
+        $('.quiz-wrapper').find('li.option').each( function(i) {
+          var $this = $(this);
+          var answerValue = $this.data('target');
+          var $target = $('.answers .target[data-accept="'+answerValue+'"]');
+          var labelText = $this.html();
+          $this.draggable( {
+            revert: "invalid",
+            containment: ".quiz-wrapper"
+          });
+         
+          if ( $target.length > 0 ) {
+          $target.droppable( {
+              accept: 'li.option[data-target="'+answerValue+'"]',
+              drop: function( event, ui ) {
+                $this.draggable('destroy');
+                $target.droppable('destroy');
+                $this.html('&nbsp;');
+                $target.html(labelText);
+                answersLeft.splice( answersLeft.indexOf( answerValue ), 1 );
+              }
+          });
+          answersLeft.push(answerValue);
+          } else { }
+         });
+         $('.quiz-wrapper button[type="submit"]').click( function() {
+             if ( answersLeft.length > 0 ) {
+                  $('.lightbox-bg').show();
+            $('.status.deny').show();
+            $('.lightbox-bg').click( function() {
+                    $('.lightbox-bg').hide();
+              $('.status.deny').hide();
+              $('.lightbox-bg').unbind('click');
+            });
+             } else {
+                  $('.lightbox-bg').show();
+            $('.status.confirm').show();
+             }
+         });
+      });
+      
+      </script><div class="footer">Economie Online © Alexandra Ioan</div>
+ 
+</body>
+</html>

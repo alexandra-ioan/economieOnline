@@ -1,0 +1,415 @@
+html{
+    font-family: "Futura Bk BT", sans-serif;
+}
+.footer {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #333;
+    color:white;
+    text-align: center;
+    position: relative;
+    height: 30px;
+}
+.titlu {
+    color: #845ec2;
+    font-size: 4em;
+    text-align: center;
+    font-family: "Allerta Stencil", Arial, sans-serif;
+    margin: 0.5em 0;
+  }
+.subtitlu {
+    margin-top: -3em;
+    color: #555;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+.navbar {
+    
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 55;
+    line-height: 1.7;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    line-height: 1.7;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color:#845ec2;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 190;
+    background-color: #f9f9f9;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.search-container {
+  float: right;
+}
+
+ input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+  .nabvbar input[type=text]{
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+.search-container button {
+  width:12%;
+  height:63%;
+}
+  .navbar input[type=text] {
+    border: 1px solid #ccc; 
+  }
+  .pageTitle {
+    background-color:  #845ec2;
+    background: radial-gradient( #845ec2,  #845ec2);
+    color: #845ec2;
+    width: 100%;
+    padding: 20px 0;
+    margin: 0 0 14px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .3) inset;
+}
+.pageTitle * {
+    color: #fff;
+}
+.inside {
+    width: 96%;
+    padding: 0 2%;
+}
+.style45{   
+    font: 2.4em Oswald, Verdana, Helvetica, sans-serif;
+    color: #5a6182;
+    margin: .3em 0;
+    text-align: left;
+    font-weight: 900;
+}
+}
+#rig li,.rig-text{box-sizing:border-box}
+#rig{
+    max-width: 900px;
+    padding: 0;
+    font-size: 0;
+    list-style: none;
+    background-color: #fff;
+}
+#rig li{display:inline-block;width:50%;vertical-align:middle;margin:0;padding:0}
+.rig-cell{display:block;position:relative;overflow:hidden}
+.rig-overlay,.rig-text{display:block;position:absolute;left:0;filter:alpha(opacity=0)}.rig-img{display:block;width:100%;height:auto;border:none;transform:scale(1);transition:all 1s}#rig li:hover .rig-img{transform:scale(1.05)}.rig-overlay{top:0;bottom:0;right:0;margin:auto;background:url(img/link.png) center 20% no-repeat #3DC0F1;background-size:50px 50px;opacity:0;transition:all .6s}#rig li:hover .rig-overlay{opacity:.8}.rig-text{padding:0 30px;width:100%;text-align:center;text-transform:capitalize;font-size:18px;font-family:Oswald,sans-serif;font-weight:400!important;top:40%;color:#fff;opacity:0;transform:translateY(-20px);transition:all .3s}#rig li:hover .rig-text{transform:translateY(0);opacity:.9}@media (max-width:9000px){}@media (max-width:700px){#rig li{width:50%}}@media (max-width:550px){#rig li{width:50%}}
+
+.scroll-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    color:white;
+    z-index: 5;
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    background-color:#845ec2;
+    border-radius: 5px;
+    border-radius: 50%;
+}
+table.rssdog{
+    font-size: inherit;
+    overflow: hidden;
+    word-wrap: break-word;
+    border-width: 2px;
+    position: fixed;
+    border-style: solid;
+
+    max-width: 20%;
+    top: 408px;
+    left: 10px;
+    width: 20%;
+    border-color: #d4d0c8;
+}
+.nevoi{
+    padding-left:4.5em;
+    position:relative;
+    bottom: 18em;
+    font-size:20px;
+}
+.nevoi ul{
+    list-style-type: none;
+}
+.ct-chart{
+    width:50%;
+    height:50%;
+    float:right;
+    position: relative;
+    bottom: 14em;
+}
+.ct-chart1{
+    width:50%;
+    height:50%;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+  .c-preview {
+    background: #000;
+    background: -moz-linear-gradient(-45deg, #000000 0%, #000000 25%, #1e539e 50%, #ff3083 75%, #7800a8 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #000000 0%, #000000 25%, #1e539e 50%, #ff3083 75%, #7800a8 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #000000 0%, #000000 25%, #1e539e 50%, #ff3083 75%, #7800a8 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-size: 400% 400%;
+    background-repeat: no-repeat;
+    display: flex;
+    width:50%;
+    height: 500px;
+    max-width: 100vw;
+    max-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    transition: .5s all;
+  }
+  .c-preview__img, .c-preview__img2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #000 url(http://www.annefocke.net/wp-content/uploads/2016/08/Stack-books-economics-1-crop-644x442.jpg) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: .5;
+    mix-blend-mode: screen;
+  }
+  .c-preview__img2{
+
+    background: #000 url(https://www.emu.edu.tr/emu_v1/media/assets/images/programs/economics-ekonomi-03.jpg)  !important;
+  }
+  .c-preview__title {
+    position: relative;
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  .c-preview:hover {
+    background-position: 100% 100%;
+  }
+  .c-preview:hover__title {
+    text-shadow: 0 0 20px black;
+  }
+  
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.ct-series-b .ct-bar, .ct-series-b .ct-line, .ct-series-b .ct-point, .ct-series-b .ct-slice-donut {
+    stroke: #00C9A7;
+}
+.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+    stroke:#845EC2;
+}
+.container{
+    margin-right: 2.3em;
+    margin-left: 2.3em;
+}
+
+a{
+    text-decoration:none;
+}
+.frac {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    letter-spacing: 0.001em;
+    text-align: center;
+    color:red;
+}
+.frac > span {
+    display: block;
+    padding: 0.1em;
+}
+.frac span.bottom {
+    border-top: thin solid red;
+}
+.frac span.symbol {
+    display: none;
+    
+} 
+
+.quiz-wrapper {
+    position: relative;
+    display: block;
+    width: 800px;
+    height: 550px;
+  }
+  .quiz-wrapper p.question-description {
+    background: #845ec2;
+    color: white;
+    padding: 25px 20px;
+  }
+  .quiz-wrapper ul.options {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+    list-style: none;
+    border: 1px solid #845ec2;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  .quiz-wrapper ul.options li {
+    border: 1px solid transparent;
+    padding: 6px 8px;
+  }
+  .quiz-wrapper ul.options li.title {
+    background: #845ec2;
+    color: white;
+  }
+  .quiz-wrapper ul.options li.option {
+    display: block;
+    position: relative;
+    z-index: 50;
+    font-size: 18px;
+  }
+  .quiz-wrapper .answers {
+    display: inline-block;
+    width: 400;
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .quiz-wrapper .answers .target {
+    display: inline-block;
+    width: 150px;
+    background: lightblue;
+    margin: 0 3px;
+    text-align: center;
+  }
+  .quiz-wrapper button[type="submit"] {
+    display: block;
+    position: relative;
+    margin: 10px auto;
+    padding: 10px;
+    background: #845ec2;
+    border: none;
+    width:100px;
+    color: white;
+    border-radius: 50%;
+    font-size: 18px;
+  }
+  .quiz-wrapper button[type="submit"]:hover{
+      cursor: pointer;
+      color:#845ec2;
+      background: white;
+      border:2px solid #845ec2;
+  }
+  .lightbox-bg {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .status {
+    display: none;
+    position: absolute;
+    z-index: 110;
+    text-align: center;
+    width: 80%;
+    top: 220px;
+    left: 47px;
+  }
+  .status p {
+    background: white;
+    padding: 30px;
+  }
+  

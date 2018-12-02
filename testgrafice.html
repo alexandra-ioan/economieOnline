@@ -1,0 +1,312 @@
+<html>
+<head>
+    <link rel="shortcut icon" type="image/png" href="alilogo2-01.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="manifest" href="/manifest.json">
+         <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+        <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css">
+    <title>Economie Online</title>
+    <style>
+                      
+           #wrapper {
+             min-height: 100%;
+             height: auto !important;
+             height: 100%;
+           }
+           
+           .browsehappy {
+             margin: 0.2em 0;
+             background: #ccc;
+             color: #000;
+             padding: 0.2em 0;
+           }
+           
+           .authorImage {
+             width: 360px;
+           }
+           
+           .title {
+             display: block;
+             margin-bottom: 20px;
+             padding: 15px 20px;
+           }
+           
+           .pass {
+             background-color: #5cb85c;
+           }
+           
+           .fail {
+             background-color: red;
+           }
+           .bg-info.title:hover,.bg-info.title:active, .bg-info.title:focus{
+               background-color: #B9F6FE;
+
+           }
+           </style>
+</head>
+<body>
+  
+<div class="container">
+        <h1 class="titlu">Economie Online</h1>
+        <p class="subtitlu">Pagina Web cu teorie si exercitii pentru economie</p>
+
+        <div class="navbar">
+            <a href="homepage.html">Home</a>
+            <a href="expb.html">Quiz Wall</a>
+            <a href="testgrafice.html">Test grafice</a>
+            <a href="test2.html">Test fill in the blank</a>
+            <a href="test3.html">Test de asociere termeni</a>
+            <a href="grila.html">Test grila producatorul si costul</a>
+          </div>
+      
+ <div class="pageTitle">
+              <div class="inside">
+              <h2 class="wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+                Selecteaza denumirea corecta a graficului
+              </h2>
+           </div>
+      </div>
+
+      <div class="container">
+        <div id="app"></div>
+      </div>
+      
+<script src='http://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/react.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://rawgithub.com/jgallen23/routie/master/dist/routie.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+
+<script>var Quiz = React.createClass({ displayName: 'Quiz',
+        propTypes: {
+          data: React.PropTypes.array.isRequired },
+      
+        getInitialState: function getInitialState() {
+          return _.extend({
+            bgClass: 'neutral',
+            showContinue: false },
+          this.props.data.selectGame());
+        },
+        handleBookSelected: function handleBookSelected(title) {
+          var isCorrect = this.state.checkAnswer(title);
+          this.setState({
+            bgClass: isCorrect ? 'pass' : 'fail',
+            showContinue: isCorrect });
+      
+        },
+        handleAddGame: function handleAddGame() {
+          routie('Add');
+        },
+        handleContinue: function handleContinue() {
+          this.setState(this.getInitialState());
+        },
+        render: function render() {
+          return React.createElement('div', null,
+            React.createElement('div', { className: 'row' },
+              React.createElement('div', { className: 'col-md-4' },
+                React.createElement('img', { src:
+                  this.state.author.imgSrc,
+      
+                  className: 'authorImage col-md-3' })), ' ',
+              React.createElement('div', { className: 'col-md-7' }, ' ',
+                this.state.grafic.map(function (b) {
+                  return React.createElement(Book, { onBookSelected:
+                    this.handleBookSelected,
+      
+                    title:
+                    b });
+      
+      
+                }, this), ' '), ' ',
+              React.createElement('div', { style: {
+                  height: '260px',
+                  marginbottom: '15px' },
+      
+      
+                className:
+                "col-md-1 " + this.state.bgClass }), ' '), ' ',
+      
+      
+            this.state.showContinue ? React.createElement('div', { className: 'row' },
+              React.createElement('div', { className: 'col-md-12' },
+                React.createElement('button', { onClick:
+                    this.handleContinue,
+      
+                    type: 'submit',
+                    className: 'btn btn-default' }, ' Mai departe '), ' '), ' ') : React.createElement('span', null), ' ',
+            React.createElement('div', { className: 'row' },
+              React.createElement('div', { className: 'col-md-12' },
+                ), ' '), ' ');
+      
+      
+        } });
+      
+      
+      var Book = React.createClass({ displayName: 'Book',
+        propTypes: {
+          title: React.PropTypes.string.isRequired },
+      
+        handleClick: function handleClick() {
+          this.props.onBookSelected(this.props.title);
+        },
+        render: function render() {
+          return React.createElement('div', { onClick:
+              this.handleClick,
+      
+              className: 'bg-info title' },
+            React.createElement('h4', null, ' ',
+              this.props.title, ' '));
+      
+      
+        } });
+      
+      
+      
+      var AddGameForm = React.createClass({ displayName: 'AddGameForm',
+        propTypes: {
+          onGameFormSubmitted: React.PropTypes.func.isRequired },
+      
+        handleSubmit: function handleSubmit() {
+          this.props.onGameFormSubmitted(getRefs(this));
+          return false;
+        },
+        render: function render() {
+          return React.createElement('div', { className: 'row' },
+            React.createElement('div', { className: 'col-md-12' },
+              React.createElement('h1', null, ' Add Game '), ' ', React.createElement('form', { role: 'form',
+                  onSubmit:
+                  this.handleSubmit },
+      
+                React.createElement('div', { className: 'form-group' },
+                  React.createElement('input', { ref: 'imageUrl',
+                    type: 'text',
+                    className: 'form-control',
+                    placeholder: 'Image Url' })),
+                React.createElement('div', { className: 'form-group' }, ' ', React.createElement('input', { ref: 'answer1',
+                    type: 'text',
+                    className: 'form-control',
+                    placeholder: 'Answer 1' })),
+                React.createElement('div', { className: 'form-group' }, ' ', React.createElement('input', { ref: 'answer2',
+                    type: 'text',
+                    className: 'form-control',
+                    placeholder: 'Answer 2' })),
+                React.createElement('div', { className: 'form-group' }, ' ', React.createElement('input', { ref: 'answer3',
+                    type: 'text',
+                    className: 'form-control',
+                    placeholder: 'Answer 3' })),
+                React.createElement('div', { className: 'form-group' }, ' ', React.createElement('input', { ref: 'answer4',
+                    type: 'text',
+                    className: 'form-control',
+                    placeholder: 'Answer 4' })), ' ',
+                React.createElement('button', { type: 'submit',
+                    className: 'btn btn-default' }, ' Submit '), ' '), ' '), ' ');
+        } });
+      
+      
+      var data = [{
+        name: 'Cererea elastica',
+        imgSrc: 'cerereelastica2.png',
+        grafic: [
+        'cererea elastica'] },
+        {
+        name: 'Cererea inelastica',
+        imgSrc: 'cerereinelastica2.png',
+        grafic: [
+        'cererea inelastica']},
+        {
+        name: 'Cererea elastica unitara',
+        imgSrc: 'cerereelasticaunit2.png',
+        grafic: [
+        'cererea elastica unitara'] },      
+      
+      {
+        name: 'oferta elastica',
+        imgSrc: 'ofertaelastica2.png',
+        grafic: [
+        'oferta elastica'] },
+      
+      {
+        name: 'Oferta elastica unitara',
+        imgSrc: 'ofertaelunit2.png',
+        grafic: [
+        'oferta elastica unitara'] },
+      
+      {
+        name: 'Oferta inelastica',
+        imgSrc: 'ofertainelastica2.png',
+        grafic: [
+        'oferta inelastica'] }];
+      
+      
+      
+      var selectGame = function selectGame() {
+        var grafic = _.shuffle(this.reduce(function (p, c, i) {
+          return p.concat(c.grafic);
+        }, [])).slice(0, 4);
+      
+        var answer = grafic[_.random(grafic.length - 1)];
+      
+        return {
+          grafic: grafic,
+          author: _.find(this, function (author) {
+            return author.grafic.some(function (title) {
+              return title === answer;
+            });
+          }),
+      
+          checkAnswer: function checkAnswer(title) {
+            return this.author.grafic.some(function (t) {
+              return t === title;
+            });
+          } };
+      
+      };
+      
+      data.selectGame = selectGame;
+      
+      routie({
+        '': function _() {
+          React.render(React.createElement(Quiz, { data:
+            data }),
+      
+      
+          document.getElementById('app'));
+        },
+        'add': function add() {
+          React.render(React.createElement(AddGameForm, { onGameFormSubmitted:
+            handleAddFormSubmitted }),
+      
+          document.getElementById('app'));
+        } });
+      
+      
+      function handleAddFormSubmitted(data) {
+        var quizData = [{
+          imageUrl: data.imageUrl,
+          grafic: [data.answer1, data.answer2, data.answer3, data.answer4] }];
+      
+      
+        quizData.selectGame = selectGame;
+        React.render(React.createElement(Quiz, { data:
+          quizData }),
+      
+        document.getElementById('app'));
+      }
+      
+      function getRefs(component) {
+        var result = {};
+        Object.keys(component.refs).forEach(function (refName) {
+          result[refName] = component.refs[refName].getDOMNode().value;
+        });
+      
+        return result;
+      }
+      
+      
+      </script>
+      </div>
+</body>
+</html>
